@@ -40,7 +40,7 @@ public class StorageService {
 
     public void addProfesor(Profesor profesor) {
         for(Profesor p: profesors)
-            if(p.getName().equals(profesor.getName()))
+            if(p.getName().equalsIgnoreCase(profesor.getName()))
             {
                 System.out.println("Already existing");
                 return;
@@ -50,7 +50,7 @@ public class StorageService {
 
     public void addStudent(Student student) {
         for(Student s: students)
-            if(s.getName().equals(student.getName()))
+            if(s.getName().equalsIgnoreCase(student.getName()))
             {
                 System.out.println("Already existing");
                 return;
@@ -61,7 +61,7 @@ public class StorageService {
     public void deleteStudent(String name)
     {
         for(Student s: students)
-            if(s.getName().equals(name))
+            if(s.getName().equalsIgnoreCase(name))
             {
                 students.remove(s);
                 System.out.println("Successfully deleted student "+name);
@@ -72,7 +72,7 @@ public class StorageService {
     public void deleteProfesor(String name)
     {
         for(Profesor p: profesors)
-            if(p.getName().equals(name))
+            if(p.getName().equalsIgnoreCase(name))
             {
                 profesors.remove(p);
                 System.out.println("Successfully deleted profesor "+name);
@@ -83,7 +83,7 @@ public class StorageService {
     public void updateProfesor(Profesor updatedProfesor)
     {
         for(Profesor p : profesors) {
-            if(p.getName().equals(updatedProfesor.getName())) {
+            if(p.getName().equalsIgnoreCase(updatedProfesor.getName())) {
                 p.setCourse(updatedProfesor.getCourse());
                 p.setYear(updatedProfesor.getYear());
                 p.setName(updatedProfesor.getName());
@@ -97,7 +97,7 @@ public class StorageService {
     public void updateStudent(Student updatedStudent)
     {
         for(Student s : students) {
-            if(s.getName().equals(updatedStudent.getName())) {
+            if(s.getName().equalsIgnoreCase(updatedStudent.getName())) {
                 s.setNumber(updatedStudent.getNumber());
                 s.setClasss(updatedStudent.getClasss());
                 s.setMark(updatedStudent.getMark());
@@ -108,4 +108,22 @@ public class StorageService {
             }
         }
     }
+
+    public void readPerson(String name) {
+        Profesor prof=findProfesor(name);
+        Student stud=findStudent(name);
+        if(prof==null && stud==null)
+        {
+            System.out.println("Not existing");
+        }
+        if(prof!=null)
+        {
+            System.out.println(prof);
+        }
+        if(stud!=null)
+        {
+            System.out.println(stud);
+        }
+    }
+
 }
