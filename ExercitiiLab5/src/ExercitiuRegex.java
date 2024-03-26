@@ -29,9 +29,8 @@ public class ExercitiuRegex {
         else System.out.println("Stringul nu contine cuvinte");
 
         //exercitiul 2.4
-        StringBuilder sb=new StringBuilder();
-        for(int i=string.length()-1;i>=0;i--)
-            sb.append(string.charAt(i));
+        StringBuilder sb=new StringBuilder(string);
+        sb.reverse();
         System.out.println(sb);
     }
 }
