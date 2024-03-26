@@ -1,3 +1,5 @@
+package singleton;
+
 public class SingleStringBuilder {
     private static SingleStringBuilder singleStringBuilder;
     static StringBuilder stringComplet = new StringBuilder();

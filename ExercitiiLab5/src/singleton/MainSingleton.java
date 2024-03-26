@@ -1,3 +1,5 @@
+package singleton;
+
 public class MainSingleton {
     public static void main(String[] args) {
         SingleStringBuilder singleStringBuilder1=SingleStringBuilder.getInstance();
