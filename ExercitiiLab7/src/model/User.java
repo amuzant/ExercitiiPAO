@@ -1,9 +1,9 @@
 package model;
 
-public class User implements Cloneable {
-    String nume;
-    String prenume;
-    String iban;
+public class User{
+    private String nume;
+    private String prenume;
+    private String iban;
 
     public User(String nume, String prenume, String iban) {
         this.nume = nume;
@@ -43,9 +43,5 @@ public class User implements Cloneable {
                 ", iban='" + iban + '\'' +
                 '}';
     }
-    @Override
-    public Object clone() throws CloneNotSupportedException{
-        User clona=(User)super.clone();
-        return clona;
-    }
+
 }

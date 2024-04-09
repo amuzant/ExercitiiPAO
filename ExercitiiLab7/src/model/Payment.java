@@ -57,7 +57,6 @@ public class Payment implements Cloneable {
     @Override
     public Object clone() throws CloneNotSupportedException{
         Payment clona=(Payment) super.clone();
-        clona.setUser((User) clona.getUser().clone());
         return clona;
     }
 }
