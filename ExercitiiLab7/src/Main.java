@@ -64,6 +64,7 @@ public class Main {
     public static Tranzactie stornare(Tranzactie tranzactie) throws CloneNotSupportedException {
         Tranzactie tranzactieStornata=(Tranzactie) tranzactie.clone();
         tranzactieStornata.setAmount(tranzactie.getAmount()*-1);
+        tranzactieStornata.getPayment().setAmount(tranzactie.getPayment().getAmount()*-1);
         tranzactieStornata.setRefNmb(tranzactie.getRefNmb());
         System.out.println("Tranzactie originala: "+tranzactie);
         System.out.println("Tranzactie stornata: "+tranzactieStornata);
