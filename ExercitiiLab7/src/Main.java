@@ -34,6 +34,8 @@ public class Main {
 
         // exercitiul 1
         Tranzactie tStornata2=stornare(tranzactie2);
+        System.out.println(tranzactie2);
+        System.out.println(tStornata2);
 
         Set<String> tari=new HashSet<>();
 
